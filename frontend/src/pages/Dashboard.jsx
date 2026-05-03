@@ -9,8 +9,12 @@ function Dashboard() {
 
   const [projectName, setProjectName] = useState("");
   const [projects, setProjects] = useState([]);
+  const [user, setUser] = useState(null);
 
-  const user = JSON.parse(localStorage.getItem("user"));
+  const fetchUser = async () => {
+  const res = await API.get("/auth/me");
+  setUser(res.data);
+  };
 
   const fetchTasks = async () => {
     const res = await API.get("/tasks",{withCredentials:true});
@@ -73,6 +77,7 @@ function Dashboard() {
   useEffect(() => {
     fetchTasks();
     fetchProjects();
+    fetechUser();
   }, []);
 
   return (
