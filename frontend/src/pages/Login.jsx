@@ -12,8 +12,9 @@ function Login() {
       const res = await API.post("/auth/login", { email, password },{withCredentials:true});
       navigate("/dashboard");
     } catch (err) {
-      alert("Login failed");
-    }
+  console.error(err.response?.data || err.message);
+  alert(err.response?.data?.message || "Login failed");
+}
   };
 
   return (
