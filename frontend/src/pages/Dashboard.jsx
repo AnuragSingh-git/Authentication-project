@@ -12,7 +12,7 @@ function Dashboard() {
   const [user, setUser] = useState(null);
 
   const fetchUser = async () => {
-  const res = await API.get("/auth/me");
+  const res = await API.get("/auth/getMe");
   setUser(res.data);
   };
 
