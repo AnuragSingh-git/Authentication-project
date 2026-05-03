@@ -69,3 +69,21 @@ export const login = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+export const getMe = async (req, res) => {
+  try {
+    const token = req.cookies.token;
+
+    if (!token) {
+      return res.status(401).json({ message: "Not logged in" });
+    }
+
+    const decoded = jwt.verify(token, "your_secret");
+
+    const user = await User.findById(decoded.id).select("-password");
+
+    res.json(user);
+  } catch (err) {
+    res.status(401).json({ message: "Invalid token" });
+  }
+};
