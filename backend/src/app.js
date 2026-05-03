@@ -10,9 +10,7 @@ import cookieParser from "cookie-parser";
 const app = express();
 
 app.use(cors({
-  origin: function (origin, callback) {
-    callback(null, true);
-  },
+  origin: "https://authentication-project-production.up.railway.app",
   credentials: true
 }));
 app.use(express.json());
