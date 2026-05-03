@@ -78,9 +78,9 @@ export const getMe = async (req, res) => {
       return res.status(401).json({ message: "Not logged in" });
     }
 
-    const decoded = jwt.verify(token, "your_secret");
+    const decoded = jwt.verify(token, "bcskjabsckjnsnlkcnlkas");
 
-    const user = await User.findById(decoded.id).select("-password");
+    const user = await User.findById(decoded.id);
 
     res.json(user);
   } catch (err) {
