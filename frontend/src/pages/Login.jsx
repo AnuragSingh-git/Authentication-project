@@ -9,7 +9,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const res = await API.post("/auth/login", { email, password });
+      const res = await API.post("/auth/login", { email, password },{withCredentials:true});
       navigate("/dashboard");
     } catch (err) {
       alert("Login failed");
