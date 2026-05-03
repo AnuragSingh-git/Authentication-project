@@ -27,7 +27,11 @@ export const signup = async (req, res) => {
       { expiresIn: "1d" }
     );
 
-    res.cookie("token",token);
+    res.cookie("token",token,{
+      sameSite:"none",
+      httpOnly:true,
+      secure:true
+    });
 
     res.status(201).json(user);
   } catch (err) {
@@ -55,7 +59,11 @@ export const login = async (req, res) => {
       { expiresIn: "1d" }
     );
 
-    res.cookie("token",token);
+    res.cookie("token",token,{
+      sameSite:"none",
+      httpOnly:true,
+      secure:true
+    });
     res.json({ token, user });
   } catch (err) {
     res.status(500).json({ message: err.message });
