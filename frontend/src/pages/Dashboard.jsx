@@ -77,14 +77,14 @@ function Dashboard() {
   useEffect(() => {
     fetchTasks();
     fetchProjects();
-    fetechUser();
+    fetchUser();
   }, []);
 
   return (
     <div className="container">
       <h2>Dashboard</h2>
 
-      {user.role === "admin" && (
+      {user?.role === "admin" && (
         <>
           <h3>Create Project</h3>
 
@@ -98,7 +98,7 @@ function Dashboard() {
         </>
       )}
 
-      {user.role === "admin" && (
+      {user?.role === "admin" && (
         <div>
           <h3>Create Task</h3>
 
@@ -138,7 +138,7 @@ function Dashboard() {
           <p>Project: {task.projectId?.name || "N/A"}</p>
           <p>Status: {task.status}</p>
 
-          {(user.role==="member"&&<button
+          {(user?.role==="member"&&<button
             disabled={task.status === "done"}
             onClick={() => updateStatus(task._id)}
           >
