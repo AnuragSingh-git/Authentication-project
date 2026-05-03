@@ -134,7 +134,7 @@ function Dashboard() {
 
       {tasks.map((task) => (
         <div className="task" key={task._id}>
-          <p><b>{task.title} <button style={{backgroundColor:"red"}} onClick={()=>{handledelete(task._id)}}>Delete</button></b></p>
+          <p><b>{task.title} {(user?.role==="admin"&&<button style={{backgroundColor:"red"}} onClick={()=>{handledelete(task._id)}}>Delete</button>)}</b></p>
           <p>Project: {task.projectId?.name || "N/A"}</p>
           <p>Status: {task.status}</p>
 
