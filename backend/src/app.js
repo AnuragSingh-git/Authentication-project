@@ -11,7 +11,9 @@ const app = express();
 
 app.use(cors({
   origin: "https://authentication-project1-sooty.vercel.app",
-  credentials: true
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
 app.use(cookieParser())
