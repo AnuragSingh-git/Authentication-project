@@ -10,13 +10,8 @@ function Register() {
 
   const navigate = useNavigate();
 
-  const handleRegister = async () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailRegex.test(email)) {
-      alert("Please enter a valid email address");
-      return;
-    }
+  const handleRegister = async (e) => {
+    e.preventDefault();
 
     try {
       await API.post("/auth/signup", {
@@ -37,34 +32,41 @@ function Register() {
     <div className="container">
       <h2>Register</h2>
 
-      <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+      <form onSubmit={handleRegister}>
+        <input
+          type="text"
+          placeholder="Name"
+          value={name}
+          required
+          onChange={(e) => setName(e.target.value)}
+        />
 
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        required
-        onChange={(e) => setEmail(e.target.value)}
-      />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          required
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <select value={role} onChange={(e) => setRole(e.target.value)}>
-        <option value="member">Member</option>
-        <option value="admin">Admin</option>
-      </select>
+        <select
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+        >
+          <option value="member">Member</option>
+          <option value="admin">Admin</option>
+        </select>
 
-      <button onClick={handleRegister}>Register</button>
+        <button type="submit">Register</button>
+      </form>
     </div>
   );
 }
