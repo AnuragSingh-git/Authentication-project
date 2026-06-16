@@ -11,7 +11,7 @@ const app = express();
 app.set("trust proxy", 1);
 
 app.use(cors({
-  origin: "https://authentication-project1-sooty.vercel.app",
+  origin: "https://authentication-project-kappa.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
