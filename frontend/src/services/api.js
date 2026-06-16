@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://authentication-project-production.up.railway.app/api",
+  baseURL: "https://authentication-project-f0ac.onrender.com",
    withCredentials: true
 });
 
