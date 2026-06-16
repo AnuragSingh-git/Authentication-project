@@ -97,25 +97,8 @@ MongoDB
 
 ## 📸 Screenshots
 
-### Landing Page
+<img width="1918" height="900" alt="Screenshot 2026-06-17 003316" src="https://github.com/user-attachments/assets/0c5ffe70-7e15-4e09-823d-f86919d63533" />
 
-(Add Screenshot)
-
-### Login Page
-
-(Add Screenshot)
-
-### Register Page
-
-(Add Screenshot)
-
-### Dashboard
-
-(Add Screenshot)
-
-### Task Management
-
-(Add Screenshot)
 
 ---
 
