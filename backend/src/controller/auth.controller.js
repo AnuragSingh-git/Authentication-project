@@ -34,7 +34,7 @@ export const signup = async (req, res) => {
     path: "/"
    });
 
-    res.status(201).json(user);
+    res.status(201).json({user});
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
