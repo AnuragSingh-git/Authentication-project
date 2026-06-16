@@ -11,18 +11,25 @@ function Register() {
   const navigate = useNavigate();
 
   const handleRegister = async () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address");
+      return;
+    }
+
     try {
       await API.post("/auth/signup", {
         name,
         email,
         password,
-        role
+        role,
       });
 
       alert("User created!");
       navigate("/");
     } catch (err) {
-      alert("Error creating user");
+      alert(err.response?.data?.message || "Error creating user");
     }
   };
 
@@ -30,15 +37,29 @@ function Register() {
     <div className="container">
       <h2>Register</h2>
 
-      <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
-      <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        required
+        onChange={(e) => setEmail(e.target.value)}
+      />
+
       <input
         type="password"
         placeholder="Password"
+        value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <select onChange={(e) => setRole(e.target.value)}>
+      <select value={role} onChange={(e) => setRole(e.target.value)}>
         <option value="member">Member</option>
         <option value="admin">Admin</option>
       </select>
