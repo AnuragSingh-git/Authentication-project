@@ -4,7 +4,7 @@ import userModel from "../model/user.model.js";
 export const createTask = async (req, res) => {
   try {
     if (req.user.role !== "admin") {
-      return res.status(403).json({ message: "Only admin can create task" });
+      return res.status(403).json({ message: "Only Admin can create task" });
     }
 
     const { title, projectId, assignedTo } = req.body;
