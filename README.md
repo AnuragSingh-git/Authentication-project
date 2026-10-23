@@ -2,7 +2,7 @@
 
 A full-stack task management application built using the MERN stack with secure authentication, role-based access control, and project/task organization.
 
-The system allows users to securely register, log in, manage tasks, and maintain an organized workflow through protected routes and authentication.
+The system allows users to securely register, log in, manage tasks, and maintain an organized workflow through protected routes and authentication
 
 ---
 
