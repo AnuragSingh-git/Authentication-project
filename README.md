@@ -23,7 +23,7 @@ The system allows users to securely register, log in, manage tasks, and maintain
 
 ### User Features
 
-* Create tasks
+* Create task
 * View task
 * Update task details
 * Delete tasks
