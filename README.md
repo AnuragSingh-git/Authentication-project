@@ -157,7 +157,7 @@ server/
  ├── controllers
  ├── middleware
  ├── models
- └── utils
+ └── util
 ```
 
 ---
