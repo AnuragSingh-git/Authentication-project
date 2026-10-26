@@ -181,7 +181,7 @@ This project helped me understand:
 * Role-based permissions
 * Team collaboration
 * Task reminders
-* Notifications
+* Notification
 * Analytics dashboard
 * Real-time updates
 
