@@ -43,7 +43,7 @@ The system allows users to securely register, log in, manage tasks, and maintain
 
 ## 🔐 Access Control
 
-* Secure user authentication
+* Secure user authentications
 * Session validation
 * Authorization middleware
 * Route protection
