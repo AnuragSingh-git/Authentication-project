@@ -44,7 +44,7 @@ The system allows users to securely register, log in, manage tasks, and maintain
 ## 🔐 Access Control
 
 * Secure user authentications
-* Session validation
+* Session validations
 * Authorization middleware
 * Route protection
 
