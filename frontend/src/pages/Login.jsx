@@ -34,7 +34,7 @@ function Login() {
 
       <button onClick={handleLogin}>Login</button>
       <p onClick={() => navigate("/register")} style={{ cursor: "pointer" }}>
-  Don't have an account? Register
+  Don't have an account? Register here
 </p>
     </div>
   );
