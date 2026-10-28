@@ -42,7 +42,7 @@ function Dashboard() {
     alert("Project created");
   } catch (err) {
     console.error(err);
-    alert(err.response?.data?.message || "Error creating project");
+    alert(err.response?.data?.message || "Error creating projects");
   }
 };
 
