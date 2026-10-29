@@ -77,7 +77,7 @@ export const getMe = async (req, res) => {
     const token = req.cookies.token;
 
     if (!token) {
-      return res.status(401).json({ message: "Not logged in" });
+      return res.status(401).json({ message: "User Not logged in" });
     }
 
     const decoded = jwt.verify(token, "bcskjabsckjnsnlkcnlkas");
