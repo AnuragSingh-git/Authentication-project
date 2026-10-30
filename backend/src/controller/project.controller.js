@@ -3,7 +3,7 @@ import Project from "../model/project.model.js";
 export const createProject = async (req, res) => {
   try {
     if (req.user.role !== "admin") {
-      return res.status(403).json({ message: "Only admin can create project" });
+      return res.status(403).json({ message: "Only admin can create projects" });
     }
 
     const project = await Project.create({
